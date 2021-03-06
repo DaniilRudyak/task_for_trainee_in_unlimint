@@ -1,5 +1,7 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.oracle.webservices.internal.api.message.PropertySet;
 import lombok.Data;
 
 @Data

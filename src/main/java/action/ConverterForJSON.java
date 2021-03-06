@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConvereterForJSON {
+public class ConverterForJSON {
     public static List<Order> parse(String filePath) {
         BufferedReader bufferedReader = null;
         try {

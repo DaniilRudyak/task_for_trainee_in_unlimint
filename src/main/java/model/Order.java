@@ -9,7 +9,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Order {
 
-
+    @JsonProperty("orderId")
     private int id;
 
     private double amount;
