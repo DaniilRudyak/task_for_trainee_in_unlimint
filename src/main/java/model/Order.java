@@ -6,7 +6,6 @@ import com.opencsv.bean.CsvBindByName;
 import lombok.Data;
 
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Order {
 
     @JsonProperty("orderId")

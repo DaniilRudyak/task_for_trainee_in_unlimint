@@ -1,4 +1,4 @@
-package com.unlimint.task.task;
+package com.unlimint.task;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
