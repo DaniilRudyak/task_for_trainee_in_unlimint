@@ -1,16 +1,16 @@
 package action;
 
-import model.InfoOrder;
-import model.Order;
+import model.InfoOrders;
+import model.Orders;
 
 import java.util.List;
 import java.util.Vector;
 
 public class ConverterResult {
-    public static void addOffer(Vector<InfoOrder> listInfoOrder, List<Order> listOrder, String fileType) {
-        for (Order el : listOrder)
-            listInfoOrder.add(new InfoOrder(
-                    listInfoOrder.size() + 1,
+    public static void addOffer(Vector<InfoOrders> listInfoOrders, List<Orders> listOrders, String fileType) {
+        for (Orders el : listOrders)
+            listInfoOrders.add(new InfoOrders(
+                    listInfoOrders.size() + 1,
                     el.getAmount(),
                     el.getComment(),
                     fileType,

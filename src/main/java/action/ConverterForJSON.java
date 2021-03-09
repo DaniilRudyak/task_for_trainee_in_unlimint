@@ -2,7 +2,7 @@ package action;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.Order;
+import model.Orders;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConverterForJSON {
-    public static List<Order> parse(String filePath) {
+    public static List<Orders> parse(String filePath) {
         BufferedReader bufferedReader = null;
         try {
             bufferedReader = new BufferedReader(new FileReader(filePath));
@@ -21,7 +21,7 @@ public class ConverterForJSON {
         }
 
 
-        List<Order> listOrder = new ArrayList<>();
+        List<Orders> listOrders = new ArrayList<>();
         List<String> json = new ArrayList<>();
 
 
@@ -35,22 +35,22 @@ public class ConverterForJSON {
                 json.add(str);
             }
             for (String el : json) {
-                Order order = convert(el);
-                if (order != null)
-                    listOrder.add(order);
+                Orders orders = convert(el);
+                if (orders != null)
+                    listOrders.add(orders);
             }
 
 
         } catch (IOException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
-        return listOrder;
+        return listOrders;
     }
 
-    private static Order convert(String order) {
+    private static Orders convert(String order) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            return mapper.readValue(order, Order.class);
+            return mapper.readValue(order, Orders.class);
         } catch (JsonProcessingException e) {
             System.out.println("An error occurred while converting JSON to bean: " + order);
         }
